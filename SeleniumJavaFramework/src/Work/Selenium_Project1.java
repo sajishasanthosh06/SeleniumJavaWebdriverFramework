@@ -35,7 +35,7 @@ public class Selenium_Project1 {
 		Thread.sleep(200);
 		driver.findElement(By.id("tel")).sendKeys("12345678");
 		Thread.sleep(2000);
-		//Scroll down the page 
+		//scroll down the page 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,700)");
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div[8]/input[5]")).click();
