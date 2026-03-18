@@ -3,8 +3,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -29,6 +31,7 @@ public class Selenium_Project1 {
 		driver.get("https://qavbox.github.io/demo/signup/");
 		Thread.sleep(2000);
 		driver.navigate().refresh();
+		// Form updation 
 		driver.findElement(By.name("uname")).sendKeys("Sajisha");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("abcd@gmail.com");
@@ -38,9 +41,18 @@ public class Selenium_Project1 {
 		//scroll down the page 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,700)");
+		// dropdown value selection
+		WebElement drpdwn = driver.findElement(By.xpath("//*[@id=\"container\"]/div[7]/select"));
+		Select item = new Select(drpdwn);
+		item.selectByVisibleText("Female");
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div[8]/input[5]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.id("ip")).click();
+		Thread.sleep(2000);
+		WebElement drpdwn1 = driver.findElement(By.id("tools"));
+		Select value = new Select(drpdwn1);
+		value.selectByIndex(6);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
 		Thread.sleep(2000);
