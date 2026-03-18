@@ -44,6 +44,7 @@ public class CURA_Healthcare_Service {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"btn-book-appointment\"]")).click();
 		Thread.sleep(2000);
+		// Opening navigation bar and navigating to profile page
 		driver.findElement(By.xpath("//*[@id=\"menu-toggle\"]/i")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("rofile")).click();
